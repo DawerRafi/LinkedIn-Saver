@@ -1,0 +1,93 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+      }
+      #status {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 400px;
+		font-style:italic;
+      }
+	  #button{
+		display:none;
+	  }
+	  #main{
+		width:250px;
+		height:300px;
+	  }
+	  #footer{
+		font-size:10px;
+	  }
+	  .btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #78c2f0);
+  background-image: -moz-linear-gradient(top, #3498db, #78c2f0);
+  background-image: -ms-linear-gradient(top, #3498db, #78c2f0);
+  background-image: -o-linear-gradient(top, #3498db, #78c2f0);
+  background-image: linear-gradient(to bottom, #3498db, #78c2f0);
+  -webkit-border-radius: 20;
+  -moz-border-radius: 20;
+  border-radius: 20px;
+  text-shadow: 1px 1px 3px #666666;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  box-shadow: 0px 1px 3px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 30px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    <script src="popup.js"></script>
+  </head>
+  <body>
+  <div id="main">
+  <img src="logo.jpg" alt="logo.jpg">
+	<!--<h3>Select .csv file to save :</h3> <input type="file" id="file-input" accept=".csv" /> -->
+	
+    <div id="status"></div>
+	<div id=button >
+	<br><br><br>
+    <button id="extract" class="btn" type=hidden>Start Extracting</button></div>
+	<br>
+	<div id="pagestatus">
+	</div>
+  </div>
+  <div id="footer">
+  Warning: Extracting too many pages may lead to a permanent block by LinkedIn. Please try to filter out your search as much as possible before you start extracting.
+  </div>
+  </body>
+  <script src="script.js"> 
+  </script>
+</html>
+

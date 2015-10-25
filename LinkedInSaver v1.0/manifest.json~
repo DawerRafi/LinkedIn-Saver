@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+
+  "name": "LinkedIn Saver",
+  "description": "This extension automatically detect search results from LinkedIn and saves them to an xml file",
+  "version": "1.01",
+
+  "browser_action": {
+    "default_icon": "icon3.png",
+    "default_popup": "popup.html"
+  },
+  "icons": { "16": "icon3.png",
+           "48": "icon2.png",
+          "128": "icon.png" },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "tabs", "https://www.linkedin.com/*"
+  ]
+}
